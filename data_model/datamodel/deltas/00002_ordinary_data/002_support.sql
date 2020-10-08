@@ -16,7 +16,7 @@ CREATE TABLE siro_od.support
     fk_status int,
     comment text,
     picture text,
-    geometry geometry(Point,2056) NOT NULL,
+    geometry geometry(Point,$SRID) NOT NULL,
     CONSTRAINT fkey_vl_support_type FOREIGN KEY (fk_support_type) REFERENCES siro_vl.support_type (id) MATCH FULL,
     CONSTRAINT fkey_od_owner FOREIGN KEY (fk_owner) REFERENCES siro_od.owner (id) MATCH FULL,
     CONSTRAINT fkey_vl_status FOREIGN KEY (fk_status) REFERENCES siro_vl.status (id) MATCH FULL,
